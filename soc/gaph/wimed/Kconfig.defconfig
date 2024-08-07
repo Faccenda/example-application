@@ -1,0 +1,18 @@
+if SOC_WIMED
+
+config RISCV_GP
+	default y
+
+config SYS_CLOCK_HW_CYCLES_PER_SEC
+	default 10000000
+
+config SYS_CLOCK_EXISTS
+	default n
+
+config NUM_IRQS
+	default 1
+
+config GEN_ISR_TABLES
+	default n
+	
+endif

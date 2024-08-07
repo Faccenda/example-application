@@ -1,0 +1,5 @@
+config SOC_WIMED
+	bool
+
+config SOC
+	default "wimed" if SOC_WIMED

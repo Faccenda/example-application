@@ -1,0 +1,40 @@
+/*
+ * Copyright (c) 2023 by Rivos Inc.
+ *
+ * SPDX-License-Identifier: Apache-2.0
+ */
+
+/dts-v1/;
+
+/ {
+
+	cpus {
+		#address-cells = <0x01>;
+		#size-cells = <0x00>;
+
+		cpu@0 {
+			device_type = "cpu";
+			compatible = "riscv,cpus";
+			riscv,isa = "rv32imc_zicsr";
+			reg = <0>;
+		};
+	};
+
+	soc {
+		#address-cells = <0x01>;
+		#size-cells = <0x01>;
+		compatible = "simple-bus";
+
+		flash0: flash@0 {
+			reg = <0x00000000 0x8000>;
+			compatible = "soc-nv-flash";
+			erase-block-size = <4096>;
+			write-block-size = <4>;
+		};
+
+		ram0: memory@1000000 {
+			device_type = "memory";
+			reg = <0x01000000 0x8000>;
+		};
+	};
+};
